@@ -3,4 +3,4 @@
 ## Avaliação do TDD:
 * Arthur Almeida Alves: ##########
   
-* Renan Cordeiro: ########
+* Renan Carneiro Barbosa de Araújo: ########
