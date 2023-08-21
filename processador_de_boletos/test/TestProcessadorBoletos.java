@@ -9,7 +9,7 @@ import org.junit.Test;
 public class TestProcessadorBoletos {
     
     @Test
-    public void testFaturaPagaComBoletos() {
+    public void testFaturaPagaComBoletos() throws ParseException {
         Fatura fatura = new Fatura("Cliente", 1500.0, "10-04-2017");
         List <Boleto> boletos = Arrays.asList(
             new Boleto(1, "10-04-2017", 249.5),
@@ -25,7 +25,7 @@ public class TestProcessadorBoletos {
     }
 
     @Test
-    public void testFaturaNaoPagaComBoletos() {
+    public void testFaturaNaoPagaComBoletos() throws ParseException {
         Fatura fatura = new Fatura("Cliente", 1500.0, "10-04-2017");
         List <Boleto> boletos = Arrays.asList(
             new Boleto(1, "10-04-2017", 249.5),
@@ -40,7 +40,7 @@ public class TestProcessadorBoletos {
     }
 
     @Test
-    public void testFaturaComBoletosAtrasados() {
+    public void testFaturaComBoletosAtrasados() throws ParseException {
         Fatura fatura = new Fatura("Cliente", 1500.0, "10-03-2017");
         List <Boleto> boletos = Arrays.asList(
             new Boleto(1, "10-04-2017", 249.5),
