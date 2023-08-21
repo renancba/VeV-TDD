@@ -23,4 +23,35 @@ public class TestProcessadorBoletos {
 
         assertTrue(fatura.isPaga());
     }
+
+    @Test
+    public void testFaturaNaoPagaComBoletos() {
+        Fatura fatura = new Fatura("Cliente", 1500.0, "10-04-2017");
+        List <Boleto> boletos = Arrays.asList(
+            new Boleto(1, "10-04-2017", 249.5),
+            new Boleto(2, "10-04-2017", 400.0),
+            new Boleto(3, "10-04-2017", 849.5)
+        );
+
+        ProcessadorBoletos processador = new ProcessadorBoletos();
+        processador.processarBoletos(fatura, boletos);
+
+        assertTrue(!fatura.isPaga());
+    }
+
+    @Test
+    public void testFaturaComBoletosAtrasados() {
+        Fatura fatura = new Fatura("Cliente", 1500.0, "10-03-2017");
+        List <Boleto> boletos = Arrays.asList(
+            new Boleto(1, "10-04-2017", 249.5),
+            new Boleto(2, "10-04-2017", 400.0),
+            new Boleto(3, "10-04-2017", 849.5),
+            new Boleto(4, "10-04-2017", 1.0)
+        );
+
+        ProcessadorBoletos processador = new ProcessadorBoletos();
+        processador.processarBoletos(fatura, boletos);
+
+        assertTrue(!fatura.isPaga());
+    }
 }
