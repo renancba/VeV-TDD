@@ -1,5 +1,7 @@
 package org.example.model;
 
+import org.example.Enum.Prioridade;
+
 import java.time.LocalDate;
 
 public class Tarefa {
@@ -10,9 +12,9 @@ public class Tarefa {
 
     private LocalDate dataVencimento;
 
-    private String prioridade;
+    private Prioridade prioridade;
 
-    public Tarefa(String titulo, String descricao, LocalDate dataVencimento, String prioridade) {
+    public Tarefa(String titulo, String descricao, LocalDate dataVencimento, Prioridade prioridade) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.dataVencimento = dataVencimento;
@@ -43,11 +45,11 @@ public class Tarefa {
         this.dataVencimento = dataVencimento;
     }
 
-    public String getPrioridade() {
+    public Prioridade getPrioridade() {
         return prioridade;
     }
 
-    public void setPrioridade(String prioridade) {
+    public void setPrioridade(Prioridade prioridade) {
         this.prioridade = prioridade;
     }
 

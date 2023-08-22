@@ -1,3 +1,4 @@
+import org.example.Enum.Prioridade;
 import org.example.controller.GerenciadorTarefas;
 import org.example.model.Tarefa;
 import org.junit.Test;
@@ -6,7 +7,6 @@ import org.junit.jupiter.api.BeforeEach;
 import java.time.LocalDate;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class TestGerenciadorTarefas {
 
@@ -19,7 +19,7 @@ public class TestGerenciadorTarefas {
 
     @Test
     public void testCriarTarefa() {
-        Tarefa tarefaTest = new Tarefa("fazer testes", "fazer testagem usando tdd", LocalDate.of(2018, 9, 28), "alta");
+        Tarefa tarefaTest = new Tarefa("fazer testes", "fazer testagem usando tdd", LocalDate.of(2018, 9, 28), Prioridade.ALTA);
         assertEquals("fazer testes", tarefaTest.getTitulo());
         assertEquals("fazer testagem usando tdd", tarefaTest.getDescricao());
         assertEquals( LocalDate.of(2018, 9, 28), tarefaTest.getDataVencimento());
@@ -28,9 +28,9 @@ public class TestGerenciadorTarefas {
 
     @Test
     public void testGerenciadorTarefa(){
-        Tarefa tarefaTest = new Tarefa("fazer testes", "fazer testagem usando tdd", LocalDate.of(2018, 9, 28), "alta");
-        gerenciador.adicionar(tarefaTest);
-        assertTrue(1, gerenciador.listarTarefas().size());
+        gerenciador = new GerenciadorTarefas();
+        gerenciador.adicionar("fazer testes", "fazer testagem usando tdd", LocalDate.of(2018, 9, 28), Prioridade.ALTA);
+        assertEquals(1, gerenciador.listar().size());
     }
 
 }
