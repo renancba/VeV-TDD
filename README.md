@@ -1,7 +1,7 @@
 # VeV-TDD
 
-    Este foi um projeto realizado como exercício da disciplina de Verificação e Validação de Sofftware, na qual utilizamos Test-Driven Development(TDD)
-    para desenvolver algumas aplicações simples, objetivando experenciar como é desenvolver utilizando essa abordagem de desenvolvimento.
+Este foi um projeto realizado como exercício da disciplina de Verificação e Validação de Sofftware, na qual utilizamos Test-Driven Development(TDD)
+para desenvolver algumas aplicações simples, objetivando experenciar como é desenvolver utilizando essa abordagem de desenvolvimento.
 
 ## Autor
 
