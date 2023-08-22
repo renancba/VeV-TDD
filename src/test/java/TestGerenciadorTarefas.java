@@ -33,4 +33,9 @@ public class TestGerenciadorTarefas {
         assertEquals(1, gerenciador.listar().size());
     }
 
+    @Test
+    public void testDeleteTarefa(){
+        gerenciador.remover(0);
+    }
+
 }

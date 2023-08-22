@@ -23,4 +23,8 @@ public class GerenciadorData {
     public void removerTarefa(Tarefa tarefa){
         tarefas.remove(tarefa);
     }
+
+    public void removerTarefa(int tarefaIndex){
+        tarefas.remove(tarefaIndex);
+    }
 }
