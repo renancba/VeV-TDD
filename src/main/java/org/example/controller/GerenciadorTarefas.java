@@ -29,4 +29,16 @@ public class GerenciadorTarefas {
         return tarefaData.removerTarefa(index);
     }
 
+    public void editarTitulo(int index, String tituloNovo){
+        tarefaData.getTarefa(index).setTitulo(tituloNovo);
+    }
+    public void editarDescricao(int index, String descricaoNova){
+        tarefaData.getTarefa(index).setDescricao(descricaoNova);
+    }
+    public void editarData(int index, LocalDate dataNova){
+        tarefaData.getTarefa(index).setDataVencimento(dataNova);
+    }
+    public void editarPrioridade(int index, Prioridade prioridadeNova){
+        tarefaData.getTarefa(index).setPrioridade(prioridadeNova);
+    }
 }

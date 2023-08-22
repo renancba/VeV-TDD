@@ -23,4 +23,8 @@ public class GerenciadorData {
         tarefas.remove(tarefaIndex);
         return true;
     }
+
+    public Tarefa getTarefa(int index){
+        return tarefas.get(index);
+    }
 }

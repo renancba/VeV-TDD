@@ -23,7 +23,7 @@ public class TestGerenciadorTarefas {
         assertEquals("fazer testes", tarefaTest.getTitulo());
         assertEquals("fazer testagem usando tdd", tarefaTest.getDescricao());
         assertEquals( LocalDate.of(2018, 9, 28), tarefaTest.getDataVencimento());
-        assertEquals("alta", tarefaTest.getPrioridade());
+        assertEquals(Prioridade.ALTA, tarefaTest.getPrioridade());
     }
 
     @Test
