@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44ad3e6e-cce0-48be-8c8d-c012fcd2f6a2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Enum/Prioridade.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/src/main/java/org/example/Enum/Prioridade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GerenciadorTarefas.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/src/main/java/org/example/controller/GerenciadorTarefas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Tarefa.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/src/main/java/org/example/model/Tarefa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repository/GerenciadorData.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/src/main/java/org/example/repository/GerenciadorData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestGerenciadorTarefas.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/src/test/java/TestGerenciadorTarefas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +126,7 @@
       <updated>1692661922699</updated>
       <workItem from="1692661924319" duration="1033000" />
       <workItem from="1692663421988" duration="7008000" />
-      <workItem from="1692671004442" duration="294000" />
+      <workItem from="1692671004442" duration="1413000" />
     </task>
     <servers />
   </component>
