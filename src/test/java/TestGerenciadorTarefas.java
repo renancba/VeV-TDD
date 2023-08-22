@@ -70,9 +70,9 @@ public class TestGerenciadorTarefas {
         List<Tarefa> tarefasOrdenadas = gerenciador.getTarefasOrdenadas();
 
         assertEquals(tarefa4, tarefasOrdenadas.get(0));
-        assertEquals(tarefa5, tarefasOrdenadas.get(1));
-        assertEquals(tarefa1, tarefasOrdenadas.get(2));
-        assertEquals(tarefa3, tarefasOrdenadas.get(3));
+        assertEquals(tarefa1, tarefasOrdenadas.get(1));
+        assertEquals(tarefa3, tarefasOrdenadas.get(2));
+        assertEquals(tarefa5, tarefasOrdenadas.get(3));
         assertEquals(tarefa2, tarefasOrdenadas.get(4));
 
     }

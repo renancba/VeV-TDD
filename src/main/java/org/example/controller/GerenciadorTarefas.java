@@ -5,6 +5,7 @@ import org.example.model.Tarefa;
 import org.example.repository.GerenciadorData;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.List;
 
 public class GerenciadorTarefas {
@@ -40,5 +41,10 @@ public class GerenciadorTarefas {
     }
     public void editarPrioridade(int index, Prioridade prioridadeNova){
         tarefaData.getTarefa(index).setPrioridade(prioridadeNova);
+    }
+
+    public List<Tarefa> getTarefasOrdenadas() {
+        List<Tarefa> tarefas = tarefaData.getTarefas();
+        return tarefas.stream().sorted(Comparator.comparing(Tarefa::getDataVencimento).thenComparing(Tarefa::getPrioridade)).toList();
     }
 }
