@@ -19,12 +19,8 @@ public class GerenciadorData {
     public List<Tarefa> getTarefas() {
         return tarefas;
     }
-
-    public void removerTarefa(Tarefa tarefa){
-        tarefas.remove(tarefa);
-    }
-
-    public void removerTarefa(int tarefaIndex){
+    public boolean removerTarefa(int tarefaIndex){
         tarefas.remove(tarefaIndex);
+        return true;
     }
 }

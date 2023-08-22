@@ -1,8 +1,8 @@
 import org.example.Enum.Prioridade;
 import org.example.controller.GerenciadorTarefas;
 import org.example.model.Tarefa;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
 
 import java.time.LocalDate;
 
@@ -12,7 +12,7 @@ public class TestGerenciadorTarefas {
 
     private GerenciadorTarefas gerenciador;
 
-    @BeforeEach
+    @Before
     public void init() {
         this.gerenciador = new GerenciadorTarefas();
     }
@@ -28,14 +28,13 @@ public class TestGerenciadorTarefas {
 
     @Test
     public void testGerenciadorTarefa(){
-        gerenciador = new GerenciadorTarefas();
         gerenciador.adicionar("fazer testes", "fazer testagem usando tdd", LocalDate.of(2018, 9, 28), Prioridade.ALTA);
         assertEquals(1, gerenciador.listar().size());
     }
-
     @Test
-    public void testDeleteTarefa(){
-        gerenciador.remover(0);
+    public void testDeleteTarefaIndex(){
+        gerenciador.adicionar("fazer testes", "fazer testagem usando tdd", LocalDate.of(2018, 9, 28), Prioridade.ALTA);
+        gerenciador.removerIndex(0);
     }
 
 }
