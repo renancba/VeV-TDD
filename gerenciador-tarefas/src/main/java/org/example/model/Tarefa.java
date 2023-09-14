@@ -54,6 +54,11 @@ public class Tarefa {
         this.prioridade = prioridade;
     }
 
+    public boolean isVencida() {
+        LocalDate dataAtual = LocalDate.now();
+        return !dataVencimento.isBefore(dataAtual);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

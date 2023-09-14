@@ -47,4 +47,7 @@ public class GerenciadorTarefas {
         List<Tarefa> tarefas = tarefaData.getTarefas();
         return tarefas.stream().sorted(Comparator.comparing(Tarefa::getDataVencimento).thenComparing(Tarefa::getPrioridade)).toList();
     }
+    public Tarefa getTarefa(int index) {
+       return tarefaData.getTarefa(index);
+    }
 }

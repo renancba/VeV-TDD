@@ -37,7 +37,6 @@ public class TestGerenciadorTarefas {
         gerenciador.adicionar("fazer testes", "fazer testagem usando tdd", LocalDate.of(2018, 9, 28), Prioridade.ALTA);
         gerenciador.removerIndex(0);
     }
-
     @Test
     public void testEditTitutlo(){
         gerenciador.adicionar("fazer testes", "fazer testagem usando tdd", LocalDate.of(2018, 9, 28), Prioridade.ALTA);
@@ -75,6 +74,43 @@ public class TestGerenciadorTarefas {
         assertEquals(tarefa5, tarefasOrdenadas.get(3));
         assertEquals(tarefa2, tarefasOrdenadas.get(4));
 
+    }
+
+    @Test
+    public void testRemoverTarefaComPrioridadeBaixaVencida() {
+        // Caso de teste 1
+        Tarefa tarefa = gerenciador.adicionar("tarefa 1", "descrição 1", LocalDate.of(2022, 8, 31), Prioridade.BAIXA);
+        boolean result = gerenciador.removerIndex(0);
+        assertEquals(false, result);
+    }
+
+    @Test
+    public void testRemoverTarefaComPrioridadeBaixaDentroPrazo() {
+        // Caso de teste 2
+        Tarefa tarefa = gerenciador.adicionar("tarefa qualquer", "descrição qualquer", LocalDate.of(2023, 8, 31), Prioridade.BAIXA);
+        boolean result = gerenciador.removerIndex(0);
+        assertEquals(true, result);
+    }
+
+    @Test
+    public void testExistenciaTarefaComPrioridadeBaixaVencida() {
+        // Caso de teste 3
+        Tarefa tarefa = gerenciador.adicionar("tarefa qualquer", "descrição qualquer", LocalDate.of(2022, 8, 31), Prioridade.BAIXA);
+        assertEquals(1, gerenciador.listar().size());
+    }
+
+    @Test
+    public void testExistenciaTarefaComPrioridadeAltaFutura() {
+        // Caso de teste 4
+        Tarefa tarefa = gerenciador.adicionar("tarefa qualquer", "descrição qualquer", LocalDate.of(2024, 8, 31), Prioridade.ALTA);
+        assertEquals(1, gerenciador.listar().size());
+    }
+
+    @Test
+    public void testExistenciaTarefaComPrioridadeMediaVencida() {
+        // Caso de teste 5
+        Tarefa tarefa = gerenciador.adicionar("tarefa qualquer", "descrição qualquer", LocalDate.of(2022, 8, 31), Prioridade.INTERMEDIARIA);
+        assertEquals(1, gerenciador.listar().size());
     }
 
 }
