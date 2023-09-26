@@ -1,13 +1,13 @@
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+package processador_de_boletos;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.text.ParseException;
 import java.util.ArrayList;
 
-import org.junit.Test;
+public class TestProcessadorBoletosJUnit5 {
 
-public class TestProcessadorBoletos {
-    
     @Test
     public void testFaturaPagaComBoletos() throws ParseException {
         Fatura fatura = new Fatura("Cliente", 1500.0, "10-04-2017");
@@ -27,7 +27,7 @@ public class TestProcessadorBoletos {
     @Test
     public void testFaturaNaoPagaComBoletos() throws ParseException {
         Fatura fatura = new Fatura("Cliente", 1500.0, "10-04-2017");
-        ArrayList <Boleto> boletos = new ArrayList<Boleto>();
+        ArrayList<Boleto> boletos = new ArrayList<Boleto>();
 
         boletos.add(new Boleto(1, "10-04-2017", 249.5));
         boletos.add(new Boleto(2, "10-04-2017", 400.0));
@@ -37,13 +37,13 @@ public class TestProcessadorBoletos {
         ProcessadorBoletos processador = new ProcessadorBoletos();
         processador.processarBoletos(fatura, boletos);
 
-        assertTrue(!fatura.getPaga());
+        assertFalse(fatura.getPaga());
     }
 
     @Test
     public void testFaturaComBoletosAtrasados() throws ParseException {
         Fatura fatura = new Fatura("Cliente", 1500.0, "10-03-2017");
-        ArrayList <Boleto> boletos = new ArrayList<Boleto>();
+        ArrayList<Boleto> boletos = new ArrayList<Boleto>();
 
         boletos.add(new Boleto(1, "10-04-2017", 299.5));
         boletos.add(new Boleto(2, "10-04-2017", 350.0));
@@ -53,13 +53,13 @@ public class TestProcessadorBoletos {
         ProcessadorBoletos processador = new ProcessadorBoletos();
         processador.processarBoletos(fatura, boletos);
 
-        assertTrue(!fatura.getPaga());
+        assertFalse(fatura.getPaga());
     }
 
     @Test
     public void testFaturaComBoletosEmDia() throws ParseException {
         Fatura fatura = new Fatura("Cliente", 1500.0, "10-05-2017");
-        ArrayList <Boleto> boletos = new ArrayList<Boleto>();
+        ArrayList<Boleto> boletos = new ArrayList<Boleto>();
 
         boletos.add(new Boleto(1, "10-04-2017", 299.5));
         boletos.add(new Boleto(2, "11-05-2016", 350.0));
@@ -75,7 +75,7 @@ public class TestProcessadorBoletos {
     @Test
     public void testTipoDosBoletos() throws ParseException {
         Fatura fatura = new Fatura("Cliente", 1500.0, "10-05-2017");
-        ArrayList <Boleto> boletos = new ArrayList<Boleto>();
+        ArrayList<Boleto> boletos = new ArrayList<Boleto>();
 
         boletos.add(new Boleto(1, "10-04-2017", 299.5));
         boletos.add(new Boleto(2, "11-05-2016", 350.0));
@@ -85,7 +85,7 @@ public class TestProcessadorBoletos {
         ProcessadorBoletos processador = new ProcessadorBoletos();
         processador.processarBoletos(fatura, boletos);
 
-        assertTrue(fatura.getPagamentos().get(0).getForma() == MeioDePagamento.BOLETO);
+        assertEquals(MeioDePagamento.BOLETO, fatura.getPagamentos().get(0).getForma());
     }
 
     @Test
@@ -98,7 +98,7 @@ public class TestProcessadorBoletos {
         ProcessadorBoletos processador = new ProcessadorBoletos();
         processador.processarBoletos(fatura, boletos);
 
-        assertEquals(false, fatura.getPaga());
+        assertFalse(fatura.getPaga());
     }
 
     @Test
@@ -111,7 +111,7 @@ public class TestProcessadorBoletos {
         ProcessadorBoletos processador = new ProcessadorBoletos();
         processador.processarBoletos(fatura, boletos);
 
-        assertEquals(false, fatura.getPaga());
+        assertTrue(fatura.getPaga());
     }
 
     @Test
@@ -124,11 +124,11 @@ public class TestProcessadorBoletos {
         ProcessadorBoletos processador = new ProcessadorBoletos();
         processador.processarBoletos(fatura, boletos);
 
-        assertEquals(true, fatura.getPaga());
+        assertTrue(fatura.getPaga());
     }
 
     @Test
-    public void testFaturaAcimaDoMaximoFuturaBoletoAcimaDoMaximoPagoATempo() throws ParseException {
+    public void testFaturaAcimaDoMaximoFaturaBoletoAcimaDoMaximoPagoATempo() throws ParseException {
         Fatura fatura = new Fatura("Cliente", 200.0, "10-01-2022");
         ArrayList<Boleto> boletos = new ArrayList<Boleto>();
 
@@ -137,7 +137,7 @@ public class TestProcessadorBoletos {
         ProcessadorBoletos processador = new ProcessadorBoletos();
         processador.processarBoletos(fatura, boletos);
 
-        assertEquals(false, fatura.getPaga());
+        assertFalse(fatura.getPaga());
     }
 
     @Test
@@ -150,6 +150,36 @@ public class TestProcessadorBoletos {
         ProcessadorBoletos processador = new ProcessadorBoletos();
         processador.processarBoletos(fatura, boletos);
 
-        assertEquals(false, fatura.getPaga());
+        assertFalse(fatura.getPaga());
+    }
+
+    @Test
+    public void testProcessarBoletosComDataInvalida() {
+        Fatura fatura = new Fatura("Cliente", 1500.0, "10-04-2017");
+        ArrayList<Boleto> boletos = new ArrayList<Boleto>();
+
+        boletos.add(new Boleto(1, "invalida", 249.5)); // Data inválida
+
+        ProcessadorBoletos processador = new ProcessadorBoletos();
+
+        // Use assertThrows para verificar se uma exceção é lançada
+        assertThrows(ParseException.class, () -> {
+            processador.processarBoletos(fatura, boletos);
+        });
+    }
+
+    @Test
+    public void testProcessarBoletosComValorNegativo() {
+        Fatura fatura = new Fatura("Cliente", 1500.0, "10-04-2017");
+        ArrayList<Boleto> boletos = new ArrayList<Boleto>();
+
+        boletos.add(new Boleto(1, "10-04-2017", -100.0)); // Valor negativo
+
+        ProcessadorBoletos processador = new ProcessadorBoletos();
+
+        // Use assertThrows para verificar se uma exceção é lançada
+        assertThrows(IllegalArgumentException.class, () -> {
+            processador.processarBoletos(fatura, boletos);
+        });
     }
 }

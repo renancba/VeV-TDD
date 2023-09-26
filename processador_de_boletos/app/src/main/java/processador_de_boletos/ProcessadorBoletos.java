@@ -1,3 +1,5 @@
+package processador_de_boletos;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -8,17 +10,25 @@ public class ProcessadorBoletos {
 
     public void processarBoletos(Fatura fatura, List<Boleto> boletos) throws ParseException {
         Date limite = DATE_FORMAT.parse(fatura.getData());
-
+    
         for (Boleto boleto : boletos) {
             Date dataBoleto = DATE_FORMAT.parse(boleto.getData());
             
             if (dataBoleto.before(limite) || dataBoleto.equals(limite)) {
-                Pagamento pagamento = new Pagamento(boleto.getValor(), MeioDePagamento.BOLETO, boleto.getData());
+                double valorBoleto = boleto.getValor();
+    
+                if (valorBoleto < 0) {
+                    throw new IllegalArgumentException("O valor do boleto não pode ser negativo.");
+                }
+    
+                Pagamento pagamento = new Pagamento(valorBoleto, MeioDePagamento.BOLETO, boleto.getData());
                 fatura.adicionaPagamento(pagamento);
             }
         }
+        
         if (fatura.getValor() <= 0) {
             fatura.setPaga(true);
         }
     }
+    
 }
