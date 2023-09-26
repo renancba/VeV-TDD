@@ -1,3 +1,4 @@
+package processador_de_boletos;
 
 public class Boleto {
     private int codigo;

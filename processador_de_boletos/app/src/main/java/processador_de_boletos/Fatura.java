@@ -1,3 +1,5 @@
+package processador_de_boletos;
+
 import java.util.ArrayList;
 
 public class Fatura {
@@ -5,12 +7,14 @@ public class Fatura {
     private double valor;
     private String data;
     private ArrayList<Pagamento> pagamentos;
+    private boolean paga;
 
     public Fatura(String cliente, double valor, String data) {
         this.cliente = cliente;
         this.valor = valor;
         this.data = data;
         this.pagamentos = new ArrayList<Pagamento>();
+        this.paga = false;
     }
 
     public String getCliente() {
@@ -25,8 +29,12 @@ public class Fatura {
         return this.data;
     }
 
-    public boolean isPaga() {
-        return this.valor == 0.0;
+    public boolean getPaga() {
+        return this.paga;
+    }
+
+    public void setPaga(boolean paga) {
+        this.paga = paga;
     }
 
     public ArrayList<Pagamento> getPagamentos() {
