@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44ad3e6e-cce0-48be-8c8d-c012fcd2f6a2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gerenciador-tarefas/src/main/java/org/example/controller/GerenciadorTarefas.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/src/main/java/org/example/controller/GerenciadorTarefas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gerenciador-tarefas/src/main/java/org/example/model/Tarefa.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/src/main/java/org/example/model/Tarefa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gerenciador-tarefas/src/test/java/TestGerenciadorTarefas.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/src/test/java/TestGerenciadorTarefas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gerenciador-tarefas/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciador-tarefas/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,43 +30,56 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2UJe4V3GnPOmBDS1AgRGsVRkomE" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "gerenciador-tarefas",
+    "last_opened_file_path": "D:/GerenciadorTarefasTDD",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GerenciadorTarefasTDD\gerenciador-tarefas" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestGerenciadorTarefas.testRemoverTarefaComPrioridadeBaixaVencida">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn jacoco:report " />
+      <command value="mvn test" />
+      <command value="mvn clean test" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.TestGerenciadorTarefas">
+    <configuration name="TestGerenciadorNovo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GerenciadorTarefasTDD" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestGerenciadorNovo" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,11 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestGerenciadorTarefas.testRemoverTarefaComPrioridadeBaixaVencida" />
         <item itemvalue="JUnit.TestGerenciadorTarefas" />
+        <item itemvalue="JUnit.TestGerenciadorNovo" />
+        <item itemvalue="JUnit.TestGerenciadorTarefas.testRemoverTarefaComPrioridadeBaixaVencida" />
         <item itemvalue="JUnit.TestGerenciadorTarefas.testTaskDeletionWhenLowPriorityAndOverdue" />
         <item itemvalue="JUnit.TestGerenciadorTarefas.testGetTarefasOrdenadas" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -131,7 +145,9 @@
       <workItem from="1692663421988" duration="7008000" />
       <workItem from="1692671004442" duration="1699000" />
       <workItem from="1694613392897" duration="97000" />
-      <workItem from="1694649721523" duration="1844000" />
+      <workItem from="1694649721523" duration="2152000" />
+      <workItem from="1694798459789" duration="188000" />
+      <workItem from="1695687594052" duration="2582000" />
     </task>
     <servers />
   </component>
